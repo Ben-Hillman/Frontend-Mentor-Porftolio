@@ -1,0 +1,276 @@
+/* Import fonts Roboto and Cambo */
+
+@import url('https://fonts.googleapis.com/css2?family=Cambo&family=Roboto:wght@400;700&display=swap');
+
+/* Color Variables */
+
+:root {
+    --light-coral: hsl(0, 79%, 72%);
+
+    --html: hsl(18, 87%, 55%);
+    --css: hsl(222, 88%, 55%);
+    --js: hsl(52, 84%, 63%);
+    --chart-js: hsl(357, 87%, 85%);
+}
+
+/* CSS Reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styling */
+
+body {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+
+    padding: 2rem;
+
+    min-height: 100vh;
+}
+
+/* Header styling */
+
+header {
+    display: flex;
+    gap: .25rem;
+    width: fit-content;
+}
+
+h1 {
+    color: hsl(0, 0%, 15%);
+    font-size: 1.125rem;
+    font-weight: 400;
+    font-family: "Roboto";
+}
+
+/* Projects Styling */
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.projects-card {
+    position: relative;
+
+    width: 376px;
+    height: 276px;
+    border: .5px solid aliceblue;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: filter 250ms ease-in-out;
+}
+
+h2 {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    min-width: 100%;
+    padding: 1rem;
+
+    color: white;
+    background-color: var(--light-coral);
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+
+    transition: 500ms ease-out;    
+    z-index: 10;
+}
+
+.projects-card:hover > h2 {
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+img {
+    width: inherit;
+    object-fit: contain;
+    transition: all 250ms ease-in-out;
+}
+
+.projects-card:hover img {
+    transform: scale(1.05);
+    filter: blur(1px);
+    filter: grayscale();
+}
+
+/* Projects Overview Display */
+
+.hidden {
+    display: none;
+}
+
+.projects-overview {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 40%;
+
+    border-radius: 1rem;
+    background-color: hsl(0, 0%, 99%);
+    box-shadow: 10px 10px 15px -10px black;
+    z-index: 100;
+}
+
+.close {
+    float: right;
+    padding: 1rem;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+}
+
+.fa-circle-xmark {
+    font-size: 1.5rem;
+}
+
+.projects-overview-img {
+    width: 100%;
+}
+
+.projects-overview-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+}
+
+h3,
+.btn,
+.languages p
+ {
+    font-family: "Roboto";
+}
+
+h3 {
+    margin-top: 1rem;
+}
+
+.preview-btns {
+    text-align: center;
+}
+
+.btn {
+    padding: .5rem 2rem;
+    margin-right: 1rem;
+
+    border-radius: 3rem;
+    border: 0;
+
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 250ms ease-in-out;
+}
+
+.btn:hover {
+    filter: brightness(0.8);
+}
+
+.fa-arrow-up-right-from-square {
+    margin-left: .5rem;
+}
+
+.site {
+    color: white;
+    background-color: rgba(220, 0, 0);
+}
+
+.code {
+    color: black;
+    background-color: hsl(0, 0%, 90%);
+}
+
+.html {
+    color: var(--html);
+}
+
+.css {
+    color: var(--css);
+}
+
+.js {
+    color: var(--js);
+}
+
+.chart-js {
+    color: var(--chart-js);
+}
+
+.languages p {
+    display: inline;
+    margin-right: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: "Cambo";
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 1rem;
+    }
+
+    .projects-card {
+        width: 325px;
+        height: 225px;
+    }
+
+    .projects-overview {
+        width: 100%;
+        height: 100%;
+    }
+
+    .btn {
+        padding-inline: 1rem;
+    }
+}
+
+/* .btn {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    opacity: 0;
+    padding: 1rem 2rem;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+
+    cursor: pointer;
+    background-color: hsl(0, 0%, 95%, .8);
+    z-index: 10;
+    transition: all 500ms ease-in-out;
+}
+
+.btn:hover {
+    background-color: hsl(0, 0%, 85%);
+}
+
+.projects-card:hover > .btn {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 1;
+} */
